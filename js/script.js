@@ -89,6 +89,7 @@ teams.forEach((elem) => {
     elem.falli_subiti = falls;
     console.log(elem);
 
-    squadra = `Squadra: ${nome} / Falli subiti: ${falls}`;
-    console.log(squadra);
+    squadra.push({nome, falls});
 })
+
+console.log(squadra);
