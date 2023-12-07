@@ -24,21 +24,22 @@ const bicycle = [
 ]
 
 // CREO NUOVO ARRAY PER INSERIRE LA BICICLETTA CON IL PESO MINORE
-let bike_min = [];
+let bike_min = bicycle[0];
 
 // CICLO FOR EACH
 bicycle.forEach((elem) => {
-    
-    // DESTRUTTURO L'ARRAY BICYCLE ORIGINALE
-    let { nome, peso } = elem;
 
     // CREO LA CONDIZIONE PER VERIFICA IL PESO MINORE TRA LE BICI
-    if (Math.min(peso) <= 10){
-        bike_min = `Tipo di bici e peso: ${nome} - ${peso}`;
+    if (elem.peso < bike_min.peso){
+        bike_min = elem;
     }
 })
-// STAMPO IN CONSOLE IL RISULTATO FINALE
-console.log(bike_min);
+// DESTRUTTURO L'ARRAY BICYCLE ORIGINALE
+let { nome, peso } = bike_min;
+
+// STAMPO IN CONSOLE IL RISULTATO FINALE CON IL TAMPLATE LITERAL
+let text = `Il nome della bici più leggera è ${nome} con peso pari a ${peso}.`
+console.log(text);
 
 
 // --------- SNACK 2 ---------
